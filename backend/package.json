@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@ethersproject/hdnode": "^5.5.0",
+    "@truffle/hdwallet-provider": "^1.6.0",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "keccak256": "^1.0.3",
+    "merkletreejs": "^0.2.24",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.15",
+    "truffle": "^5.4.18",
+    "web3": "^1.6.0"
+  },
+  "scripts": {
+    "truffle/migrate": "cd ./truffle && npx truffle migrate",
+    "truffle/compile": "cd ./truffle && npx truffle compile",
+    "scripts/dbMakeCollections": "node ./scripts/dbMakeCollections.js",
+    "scripts/dbInsertDumps": "node ./scripts/dbInsertDumps.js",
+    "scripts/dbGetMerkleRoot": "node ./scripts/dbGetMerkleRoot.js",
+    "scripts/scImportMerkleRoot": "node ./scripts/scImportMerkleRoot.js",
+    "scripts/scFundAddresses": "node ./scripts/scFundAddresses.js",
+    "server/start@dev": "npx nodemon ./server/server.js",
+    "server/start": "node ./server/server.js"
+  }
+}

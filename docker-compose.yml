@@ -1,0 +1,37 @@
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - type: volume
+        source: for_mongo
+        target: /data/db
+
+  backend:
+    env_file:
+      - .env
+    build: ./backend
+    volumes:
+      - type: volume
+        source: for_backend
+        target: /app
+
+  frontend:
+    env_file:
+     - .env
+    build: ./frontend
+
+  nginx:
+    env_file:
+      - .env
+    build: ./nginx
+    ports:
+      - "80:80"
+
+volumes:
+  for_mongo:
+    external: true
+  
+  for_backend:
+    external: true
