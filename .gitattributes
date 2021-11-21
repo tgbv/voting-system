@@ -1,0 +1,6 @@
+# Force LF for all text files.
+# Prevents Windows GIT from breaking Docker entrypoints.
+**/* text eol=lf
+
+# binary files should not be converted
+*.png binary
